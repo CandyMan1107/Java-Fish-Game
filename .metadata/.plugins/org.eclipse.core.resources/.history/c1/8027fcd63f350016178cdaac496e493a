@@ -1,0 +1,8 @@
+package breadTycoon;
+
+import java.awt.event.ActionEvent;
+
+public interface TycoonJob {
+	public void run();
+	public void actionPerformed(ActionEvent e);
+}

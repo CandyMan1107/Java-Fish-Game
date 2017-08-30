@@ -1,0 +1,25 @@
+package breadTycoon;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class countDown {
+	Timer timer;
+	int interval;
+	
+	timer = new Timer();
+	interval = 60000;
+	
+	timer.scheduleAtFixedRate(new TimerTask() {
+		public void run () {
+			System.out.println(setInterval());
+		}
+	}, 1000, 1000);
+}
+
+private static final int setInterval() {
+	if(interval == 1)
+		timer.cancel();
+	return --interval;
+}
+}

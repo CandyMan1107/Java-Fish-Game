@@ -1,0 +1,6 @@
+package breadTycoon;
+
+public interface tycoonJob {
+	//public void actionPerformed(ActionEvent e);
+	public void run();
+}

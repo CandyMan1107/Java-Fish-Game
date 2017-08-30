@@ -1,0 +1,6 @@
+package breadTycoon;
+
+public interface Runnable {
+	//public void actionPerformed(ActionEvent e);
+	public void run();
+}

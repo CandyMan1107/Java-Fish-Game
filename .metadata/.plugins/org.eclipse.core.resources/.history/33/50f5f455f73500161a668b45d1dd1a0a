@@ -1,0 +1,49 @@
+package breadTycoon;
+
+import java.awt.*; 
+import java.awt.event.*; 
+import javax.swing.*; 
+import javax.swing.event.*; 
+
+class progressBar extends JPanel { 
+      JProgressBar p; 
+      //Label status; 
+
+      public progressBar() { 
+              setLayout(new BorderLayout()); 
+              p = new JProgressBar(); 
+              p.setMinimum(0); 
+              p.setMaximum(60); 
+              p.setValue(0); 
+              p.setSize(300, 100);
+
+              //status = new Label(""); 
+
+              add(p); 
+              //add(status, "South"); 
+      } 
+
+      public void go() { 
+              try        { 
+                      for(int i=60; i>0; i--) { 
+                              p.setValue(i); 
+                              Thread.sleep(1000); 
+                              //status.setText(i+"√ "); 
+                      } 
+              } 
+              catch (InterruptedException e) {} 
+      } 
+
+      public Dimension getPreferredSize() { 
+              return new Dimension(300, 80); 
+      } 
+
+/*      JProgressBarTest() { 
+              JFrame f = new  JFrame("ProgressBar Sample..."); 
+              JProgressBarTest panel = new JProgressBarTest(); 
+              f.getContentPane().add(panel, "Center"); 
+              f.setSize(panel.getPreferredSize()); 
+              f.setVisible(true); 
+              panel.go(); 
+     } */
+} 

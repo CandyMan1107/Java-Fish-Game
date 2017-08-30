@@ -1,0 +1,5 @@
+package breadTycoon;
+
+public interface TycoonJob {
+	public void run();
+}

@@ -1,0 +1,48 @@
+//진행율등을 표시 할때 많이 쓰죠^^ 
+
+import java.awt.*; 
+import java.awt.event.*; 
+import javax.swing.*; 
+import javax.swing.event.*; 
+
+class JProgressBarTest extends JPanel { 
+        JProgressBar p; 
+        Label status; 
+
+        public JProgressBarTest() { 
+                setLayout(new BorderLayout()); 
+                p = new JProgressBar(); 
+                p.setMinimum(0); 
+                p.setMaximum(100); 
+                p.setValue(0); 
+
+                status = new Label(""); 
+
+                add(p,"Center"); 
+                add(status, "South"); 
+        } 
+
+        public void go() { 
+                try        { 
+                        for(int i=0;i<=100;i++) { 
+                                p.setValue(i); 
+                                Thread.sleep(500); 
+                                status.setText(i+"% 진행중..."); 
+                        } 
+                } 
+                catch (InterruptedException e) {} 
+        } 
+
+        public Dimension getPreferredSize() { 
+                return new Dimension(300, 80); 
+        } 
+
+        public static void main(String[] args) { 
+                JFrame f = new  JFrame("ProgressBar Sample..."); 
+                JProgressBarTest panel = new JProgressBarTest(); 
+                f.getContentPane().add(panel, "Center"); 
+                f.setSize(panel.getPreferredSize()); 
+                f.setVisible(true); 
+                panel.go(); 
+        } 
+} 
